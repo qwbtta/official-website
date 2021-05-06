@@ -211,6 +211,7 @@ body,
       pointer-events: none;
       margin-top: 5.3rem;
       margin-bottom: -6.3rem;
+      max-width: 100%;
     }
     .featureDescription {
       display: flex;
