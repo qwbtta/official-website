@@ -11,6 +11,11 @@ const routes = [
     name: 'productFunction',
     component: () =>
       import('@/views/productFunction.vue')
+  }, {
+    path: '/developerDocumentation',
+    name: 'developerDocumentation',
+    component: () =>
+      import('@/views/developerDocumentation.vue')
   },
 
 ]

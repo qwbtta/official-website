@@ -8,7 +8,7 @@
       <div class="headRight">
         <span class="actived">产品功能</span>
         <div class="vertical-line"></div>
-        <span>开发者文档</span>
+        <span @click="goFile">开发者文档</span>
         <div class="vertical-line"></div>
         <span>下载</span>
       </div>
@@ -113,6 +113,9 @@ export default {
   methods: {
     goHome() {
       this.$router.push("/");
+    },
+    goFile() {
+      this.$router.push("developerDocumentation");
     },
   },
 };
