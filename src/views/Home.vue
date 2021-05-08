@@ -103,6 +103,7 @@ body,
   height: 100%;
   min-width: 1900px;
   .head {
+    width: 1920px;
     height: 10rem;
     background-color: #000;
     display: flex;

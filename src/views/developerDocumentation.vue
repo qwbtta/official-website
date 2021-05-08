@@ -15,7 +15,7 @@
     </div>
     <div class="main">
       <el-container style="width: 100%; min-height: 800px">
-        <el-aside width="400px">
+        <el-aside width="300px">
           <el-menu active-text-color="#409EFF" default-active="1-1">
             <el-submenu index="1">
               <template #title>
@@ -35,7 +35,7 @@
               </template>
               <el-menu-item index="2-1" @click="show4">服务端部署</el-menu-item>
               <el-menu-item index="2-2" @click="show5"
-                >IOS集成详解</el-menu-item
+                >iOS集成详解</el-menu-item
               >
               <el-menu-item index="2-3" @click="show6"
                 >Android集成详解</el-menu-item
@@ -119,6 +119,7 @@ export default {
     overflow: hidden;
   }
   .head {
+    width: 1920px;
     height: 10rem;
     background-color: #000;
     display: flex;
@@ -163,8 +164,7 @@ export default {
     height: 100% !important;
     .iframeStyle {
       width: 100%;
-      height: 130%;
-      overflow: hidden !important;
+      min-height: 800px;
     }
   }
 }
