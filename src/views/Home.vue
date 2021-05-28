@@ -20,7 +20,7 @@
         <span>开源、免费、通用的即时通讯组件</span>
         <div class="detailArea">
           <span
-            >Open-IM借鉴并优化了微信的通讯架构，实现了高性能、轻量级、易扩展等重要特性。开发者通过集成Open-IM组件，并私有化部署服务端，可以将即时通讯、实时网络能力免费、快速集成到自身应用中，并确保业务数据的安全性和私密性。</span
+            >Open-IM包括IM服务端和客户端SDK，实现了高性能、轻量级、易扩展等重要特性。开发者通过集成Open-IM组件，并私有化部署服务端，可以将即时通讯、实时网络能力免费、快速集成到自身应用中，并确保业务数据的安全性和私密性。</span
           >
           <div class="buttonAren">
             <button class="Github">GitHub</button>
@@ -55,7 +55,7 @@
           <img src="@/assets/itemD.png" alt="" />
           <span>高性能</span>
           <span
-            >借鉴并优化微信通讯架构，抽象在线消息、离线消息、历史消息存储模型，分层治理模式，支持集群部署。</span
+            >优化通讯架构，抽象在线消息、离线消息、历史消息存储模型，分层治理模式，支持集群部署。</span
           >
         </div>
         <div class="item">

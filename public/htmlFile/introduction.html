@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>1.1简介</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
@@ -66,7 +67,7 @@ div.hr:focus { cursor: none; }
 #write pre.ty-contain-cm { white-space: normal; }
 .CodeMirror-gutters { margin-right: 4px; }
 .md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
-.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 #write .md-fences.mock-cm { white-space: pre-wrap; }
 .md-fences.md-fences-with-lineno { padding-left: 0px; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
@@ -91,6 +92,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
@@ -137,11 +139,12 @@ code { text-align: left; vertical-align: initial; }
 a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .md-inline-math .MathJax_SVG .noError { display: none !important; }
 .html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
-.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
 .MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
 .MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
 .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
 .MathJax_SVG * { transition: none 0s ease 0s; }
 .MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
@@ -154,7 +157,8 @@ iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
 mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
 @media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
@@ -162,6 +166,50 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 .md-diagram-panel .start-state { fill: var(--node-fill); }
 .md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
 .md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 
 
 :root {
@@ -349,7 +397,7 @@ table {
     word-break: initial;
 }
 table tr {
-    border-top: 1px solid #dfe2e5;
+    border: 1px solid #dfe2e5;
     margin: 0;
     padding: 0;
 }
@@ -523,9 +571,9 @@ header, .context-menu, .megamenu-content, footer{
     color: #b4654d;
 }
 
-.html-for-mac .context-menu {
+/*.html-for-mac {
     --item-hover-bg-color: #E6F0FE;
-}
+}*/
 
 #md-notification .btn {
     border: 0;
@@ -533,6 +581,7 @@ header, .context-menu, .megamenu-content, footer{
 
 .dropdown-menu .divider {
     border-color: #e5e5e5;
+    opacity: 0.4;
 }
 
 .ty-preferences .window-content {
@@ -544,10 +593,16 @@ header, .context-menu, .megamenu-content, footer{
     background: #999;
 }
 
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
 
-</style>
+
+
+</style><title>1.1简介</title>
 </head>
-<body class='typora-export os-windows'>
-<div id='write'  class=''><h2><a name="open-im是什么" class="md-header-anchor"></a><span>Open-IM是什么 </span></h2><p><span>Open-IM是由前微信技术团队打造的</span><strong><em><span>全开源、永久免费、无限制</span></em></strong><span>的即时通讯组件。Open-IM借鉴并优化了微信的通讯架构，实现了高性能、轻量级、易扩展等重要特性。开发者通过集成Open-IM组件，并私有化部署服务端，可以将即时通讯、实时网络能力免费、快速集成到自身应用中，并确保业务数据的安全性和私密性。</span></p><p>&nbsp;</p><h2><a name="open-im包括哪些模块" class="md-header-anchor"></a><span>Open-IM包括哪些模块</span></h2><p><span>(1)Andorid、iOS集成ui库和通讯功能的SDK：</span><strong><span>Open-IM-SDK</span></strong><span> </span></p><p><span>(2)纯golang服务端代码及docker镜像： </span><strong><span>Open-IM-server</span></strong><span> </span></p><p><span>(3)包含统计报表、用户管理等运营管理系统：</span><strong><span>Open-IM-admin</span></strong></p><p>&nbsp;</p><h2><a name="open-im有什么特色" class="md-header-anchor"></a><span>Open-IM有什么特色</span></h2><p><strong><span>(1) 全开源永久免费</span></strong></p><p><span>代码全部开源，永久免费，包括客户端和服务端，由前微信技术团队打造，并邀请全球技术极客参与建设。</span></p><p><strong><span>(2) 易扩展</span></strong></p><p><span>服务端采用golang实现，首创“一切皆消息”的通讯模型，轻松实现自定义消息和扩展功能。</span></p><p><strong><span>(3) 专业技术服务</span></strong></p><p><span>每个技术人员都承担技术客服的角色，强化社区，不提工单，及时解答。</span></p><p><strong><span>(4) 高性能</span></strong></p><p><span>借鉴并优化微信通讯架构，抽象在线消息、离线消息、历史消息存储模型，分层治理架构，支持集群部署。</span></p><p><strong><span>(5) 安全</span></strong></p><p><span>代码全部开源，不存在闭源商业版。服务端私有化部署，数据自我掌控。未来加入全球最安全的signal端到端加密协议。</span></p><p><strong><span>(6) 全平台支持</span></strong></p><p><span>目前支持Andorid、 iOS，正在开发Flutter、Unity、Web、小程序等终端，逐步覆盖所有主流平台。</span></p><p><span>开发者可以使用Open-IM替代市场上各种IM云服务，除了降低成本，还赋予开发者更多的灵活性和自主性。我们通过开源的方式，邀请全球技术极客来参与Open-IM建设，使每位开发者都能免费使用最优秀的IM组件，让每个app都具备微信般的通讯体验。</span></p><p>&nbsp;</p><h2><a name="市场现有产品的痛点" class="md-header-anchor"></a><span>市场现有产品的痛点</span></h2><p><span>自互联网诞生以来，即时通讯平台就一直存在。从世界范围来看，WhatsApp、Facebook、 微信、Telegram是领先的消息平台，用户主要使用这些平台与家人和朋友保持联系。随着互联网的发展，人与人之间的沟通是刚需，无处不在，几乎所有的app都集成IM功能，从社交、游戏、到生活中的方方面面，打车、找房等。可以说IM作为一种通讯能力，已经成为互联网上的基础设施，成为许多app不可或缺的功能。</span></p><p><span>如何让app具备IM功能，一般有如下三种解决方案：</span></p><p><span>第一：自研。IM是一个看起来门槛很低的项目，网上有很多所谓的IM开发教程，甚至很多毕业生的毕业设计也是做一个IM系统。由于这个误解，很多企业主或者项目经理盲目乐观组建3-5个人的IM团队，历时一年半载，最后只完成了一个demo版本。由于架构设计不合理，demo版本存在消息丢失、系统异常等bug，远远达不到商业化的要求。</span></p><p><span>第二：使用IM云服务商的SDK。很多企业自研IM这条路走不通，IM云服务商看到了这里的商业机会，通过提供IM SDK和API的方式，让开发者简单集成IM功能。当然这里也存在明显的问题。（1）成本问题：企业每年额外支付上万乃至数十万的云服务费用，是个不小的成本；（2）数据隐私问题：企业的用户数据、聊天记录等核心数据存储在IM云服务商，如何保证数据的安全性是个极大挑战；（3）需求定制问题：IM需求多样化，IM功能只能由IM云服务商通过SDK的形式提供给大家使用，对于一些定制化的需求，是否支持，什么时候实现，都是个未知数；（4）云服务商绑架问题：一旦使用IM云服务，形成捆绑关系，迁移成本高，受制于人。</span></p><p><span>第三：使用开源IM。github上IM开源项目不少，但开发者却很难使用，主要有几点原因（1）个人项目居多，虽然有些项目也有几k star，但近几年都无人维护，真正的商业化产品不敢使用；（2）大部分项目不是IM技术专业团队完成的，技术实力和技术架构存疑，也没有经过大项目和海量用户检验；（3）只开源服务端或者客户端，只开源某一端，需要开发者实现另外一端，研发成本同样不小，另外，开源项目大部分都是以单独的聊天产品开源，开发者如何把IM集成到自身app中，同样存在大量的修改和适配成本。（4）部分开源项目免费版功能缺失，商业版收费。</span></p><p>&nbsp;</p><h2><a name="open-im优势" class="md-header-anchor"></a><span>Open-IM优势</span></h2><p><strong><span>（1）前微信技术团队打造，多年IM从业经验</span></strong><span>。优秀的技术架构，经受过海量用户检验；</span></p><p><strong><span>（2）完整组件，一键部署，轻松集成。</span></strong><span>客户端提炼成方便集成的SDK，服务端通过docker一键部署，运营管理系统展示后台数据；</span></p><p><strong><span>（3）全开源，不存在任何闭源收费版本</span></strong><span>。增加开源社区的参与积极性，产生黏性、惯性、认同感、归属感以及忠诚度，引入更多技术极客，进一步完善Open-IM；</span></p><p><strong><span>（4）全免费，给初创企业每年节省上万费用</span></strong><span>。对于使用IM云服务的企业，每年可以节省上万乃至数十万费用；</span></p><p><strong><span>（5）私有化部署，无任何关联</span></strong><span>。开发者一键部署Open-IM在自家服务器上，完全摆脱了对第三方的依赖，数据隐私可控、有保障；</span></p><p><strong><span>（6）方便定制，采用“一切皆消息”的通讯模型。</span></strong><span>代码开源，对于自定义需求，开发者可以修改客户端代码轻松实现；</span></p><p><strong><span>（7）高性能、微服务、集群化。</span></strong><span>系统具备平行扩展能力，支持服务注册、服务发现。满足初创企业简单一键部署需求，同时也满足中大型企业集群化部署需求。</span></p><p><span>收取技术服务费，打造长远、健康的商业模式。对于一般开发者来说，可以免费使用我们的全部技术和代码，对于深度开发者，可以订阅我们的技术服务，我们为之提供更专业的技术服务和咨询服务。</span></p></div>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='open-im是什么'><span>Open-IM是什么 </span></h2><p><span>Open-IM是由IM专家技术团队打造的</span><strong><em><span>全开源、永久免费、无限制</span></em></strong><span>的即时通讯组件。Open-IM包括IM服务端和客户端SDK，实现了高性能、轻量级、易扩展等重要特性。开发者通过集成Open-IM组件，并私有化部署服务端，可以将即时通讯、实时网络能力免费、快速集成到自身应用中，并确保业务数据的安全性和私密性。</span></p><p>&nbsp;</p><h2 id='open-im包括哪些模块'><span>Open-IM包括哪些模块</span></h2><p><span>(1)Andorid、iOS集成ui库和通讯功能的SDK：</span><strong><span>Open-IM-SDK</span></strong><span> </span></p><p><span>(2)纯golang服务端代码及docker镜像： </span><strong><span>Open-IM-server</span></strong><span> </span></p><p><span>(3)包含统计报表、用户管理等运营管理系统：</span><strong><span>Open-IM-admin</span></strong></p><p>&nbsp;</p><h2 id='open-im有什么特色'><span>Open-IM有什么特色</span></h2><p><strong><span>(1) 全开源永久免费</span></strong></p><p><span>代码全部开源，永久免费，包括客户端和服务端，由前IM专家技术团队打造，并邀请全球技术极客参与建设。</span></p><p><strong><span>(2) 易扩展</span></strong></p><p><span>服务端采用golang实现，首创“一切皆消息”的通讯模型，轻松实现自定义消息和扩展功能。</span></p><p><strong><span>(3) 专业技术服务</span></strong></p><p><span>每个技术人员都承担技术客服的角色，强化社区，不提工单，及时解答。</span></p><p><strong><span>(4) 高性能</span></strong></p><p><span>借鉴并优化通讯架构，抽象在线消息、离线消息、历史消息存储模型，分层治理架构，支持集群部署。</span></p><p><strong><span>(5) 安全</span></strong></p><p><span>代码全部开源，不存在闭源商业版。服务端私有化部署，数据自我掌控。未来加入全球最安全的signal端到端加密协议。</span></p><p><strong><span>(6) 全平台支持</span></strong></p><p><span>目前支持Andorid、 iOS，正在开发Flutter、Unity、Web、小程序等终端，逐步覆盖所有主流平台。</span></p><p><span>开发者可以使用Open-IM替代市场上各种IM云服务，除了降低成本，还赋予开发者更多的灵活性和自主性。我们通过开源的方式，邀请全球技术极客来参与Open-IM建设，使每位开发者都能免费使用最优秀的IM组件，让每个app都具备即时通讯能力。</span></p><p>&nbsp;</p><h2 id='市场现有产品的痛点'><span>市场现有产品的痛点</span></h2><p><span>自互联网诞生以来，即时通讯平台就一直存在。从世界范围来看，WhatsApp、Facebook、 微信、Telegram是领先的消息平台，用户主要使用这些平台与家人和朋友保持联系。随着互联网的发展，人与人之间的沟通是刚需，无处不在，几乎所有的app都集成IM功能，从社交、游戏、到生活中的方方面面，打车、找房等。可以说IM作为一种通讯能力，已经成为互联网上的基础设施，成为许多app不可或缺的功能。</span></p><p><span>如何让app具备IM功能，一般有如下三种解决方案：</span></p><p><span>第一：自研。IM是一个看起来门槛很低的项目，网上有很多所谓的IM开发教程，甚至很多毕业生的毕业设计也是做一个IM系统。由于这个误解，很多企业主或者项目经理盲目乐观组建3-5个人的IM团队，历时一年半载，最后只完成了一个demo版本。由于架构设计不合理，demo版本存在消息丢失、系统异常等bug，远远达不到商业化的要求。</span></p><p><span>第二：使用IM云服务商的SDK。很多企业自研IM这条路走不通，IM云服务商看到了这里的商业机会，通过提供IM SDK和API的方式，让开发者简单集成IM功能。当然这里也存在明显的问题。（1）成本问题：企业每年额外支付上万乃至数十万的云服务费用，是个不小的成本；（2）数据隐私问题：企业的用户数据、聊天记录等核心数据存储在IM云服务商，如何保证数据的安全性是个极大挑战；（3）需求定制问题：IM需求多样化，IM功能只能由IM云服务商通过SDK的形式提供给大家使用，对于一些定制化的需求，是否支持，什么时候实现，都是个未知数；（4）云服务商绑架问题：一旦使用IM云服务，形成捆绑关系，迁移成本高，受制于人。</span></p><p><span>第三：使用开源IM。github上IM开源项目不少，但开发者却很难使用，主要有几点原因（1）个人项目居多，虽然有些项目也有几k star，但近几年都无人维护，真正的商业化产品不敢使用；（2）大部分项目不是IM技术专业团队完成的，技术实力和技术架构存疑，也没有经过大项目和海量用户检验；（3）只开源服务端或者客户端，只开源某一端，需要开发者实现另外一端，研发成本同样不小，另外，开源项目大部分都是以单独的聊天产品开源，开发者如何把IM集成到自身app中，同样存在大量的修改和适配成本。（4）部分开源项目免费版功能缺失，商业版收费。</span></p><p>&nbsp;</p><h2 id='open-im优势'><span>Open-IM优势</span></h2><p><strong><span>（1）前IM专家技术团队打造，多年IM从业经验</span></strong><span>。优秀的技术架构，经受过海量用户检验；</span></p><p><strong><span>（2）完整组件，一键部署，轻松集成。</span></strong><span>客户端提炼成方便集成的SDK，服务端通过docker一键部署，运营管理系统展示后台数据；</span></p><p><strong><span>（3）全开源，不存在任何闭源收费版本</span></strong><span>。增加开源社区的参与积极性，产生黏性、惯性、认同感、归属感以及忠诚度，引入更多技术极客，进一步完善Open-IM；</span></p><p><strong><span>（4）全免费，给初创企业每年节省上万费用</span></strong><span>。对于使用IM云服务的企业，每年可以节省上万乃至数十万费用；</span></p><p><strong><span>（5）私有化部署，无任何关联</span></strong><span>。开发者一键部署Open-IM在自家服务器上，完全摆脱了对第三方的依赖，数据隐私可控、有保障；</span></p><p><strong><span>（6）方便定制，采用“一切皆消息”的通讯模型。</span></strong><span>代码开源，对于自定义需求，开发者可以修改客户端代码轻松实现；</span></p><p><strong><span>（7）高性能、微服务、集群化。</span></strong><span>系统具备平行扩展能力，支持服务注册、服务发现。满足初创企业简单一键部署需求，同时也满足中大型企业集群化部署需求。</span></p><p><strong><span>（8）收取技术服务费，打造长远、健康的商业模式。</span></strong><span>对于一般开发者来说，可以免费使用我们的全部技术和代码，对于深度开发者，可以订阅我们的技术服务，我们为之提供更专业的技术服务和咨询服务。</span></p></div></div>
 </body>
 </html>
