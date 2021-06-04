@@ -99,7 +99,6 @@ export default {
 <style lang="scss" scoped>
 #developerDocumentation {
   height: 100%;
-  min-width: 1920px;
   overflow: hidden !important;
   .el-menu {
     min-height: 800px;
@@ -119,16 +118,14 @@ export default {
     overflow: hidden;
   }
   .head {
-    width: 1920px;
     height: 10rem;
     background-color: #000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     .headLeft {
       display: flex;
       align-items: center;
-      margin-left: 36rem;
       cursor: pointer;
       span {
         margin-left: 3rem;
@@ -140,7 +137,6 @@ export default {
     .headRight {
       display: flex;
       align-items: center;
-      margin-right: 31.4rem;
       * {
         margin-right: 4.6rem;
       }

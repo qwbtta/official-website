@@ -15,17 +15,18 @@
     </div>
     <div class="main">
       <div class="Describe">
-        <span>Open-IM</span>
-        <span>Open source SDK for Instant Messaging</span>
-        <span>开源、免费、通用的即时通讯组件</span>
-        <div class="detailArea">
+        <div class="Describeleft">
+          <span>Open-IM</span>
+          <span>Open source SDK for Instant Messaging</span>
+          <span>开源、免费、通用的即时通讯组件</span>
           <span
             >Open-IM包括IM服务端和客户端SDK，实现了高性能、轻量级、易扩展等重要特性。开发者通过集成Open-IM组件，并私有化部署服务端，可以将即时通讯、实时网络能力免费、快速集成到自身应用中，并确保业务数据的安全性和私密性。</span
           >
-          <div class="buttonAren">
-            <button class="Github">GitHub</button>
-            <button class="start">开始体验</button>
-          </div>
+        </div>
+
+        <div class="buttonAren">
+          <button class="Github">GitHub</button>
+          <button class="start">开始体验</button>
         </div>
       </div>
       <img src="@/assets/background.png" alt="" class="background" />
@@ -101,18 +102,18 @@ html,
 body,
 #Home {
   height: 100%;
-  min-width: 1900px;
+  // min-width: 1900px;
   .head {
-    width: 1920px;
+    // width: 1920px;
     height: 10rem;
     background-color: #000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     .headLeft {
       display: flex;
       align-items: center;
-      margin-left: 36rem;
+      // margin-left: 36rem;
       cursor: pointer;
       span {
         margin-left: 3rem;
@@ -124,7 +125,7 @@ body,
     .headRight {
       display: flex;
       align-items: center;
-      margin-right: 31.4rem;
+      // margin-right: 31.4rem;
       * {
         margin-right: 4.6rem;
       }
@@ -145,69 +146,68 @@ body,
     background: linear-gradient(to bottom, #0f0f2e, #090817);
     padding-bottom: 25rem;
     .Describe {
-      padding: 0 36rem;
       color: #ffffff;
       display: flex;
-      flex-direction: column;
-      span:nth-of-type(1) {
-        font-size: 6rem;
-        font-weight: 600;
-        margin-top: 11.7rem;
-      }
-      span:nth-of-type(2) {
-        font-size: 4rem;
-        font-weight: 300;
-      }
-      span:nth-of-type(3) {
-        font-size: 3.8rem;
-        font-weight: 500;
-        margin-top: 0.6rem;
-      }
-      .detailArea {
+      align-items: flex-end;
+      justify-content: space-evenly;
+      .Describeleft {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 3.7rem;
-        span {
+        flex-direction: column;
+        align-items: flex-start;
+        span:nth-of-type(1) {
+          font-size: 6rem;
+          font-weight: 600;
+          margin-top: 11.7rem;
+        }
+        span:nth-of-type(2) {
+          font-size: 4rem;
+          font-weight: 300;
+        }
+        span:nth-of-type(3) {
+          font-size: 3.8rem;
+          font-weight: 500;
+          margin-top: 0.6rem;
+        }
+        span:nth-of-type(4) {
           font-size: 2.2rem;
           font-weight: 400;
           max-width: 66.4rem;
-          margin-top: 0;
+          margin-top: 4.6rem;
         }
-        .buttonAren {
-          display: flex;
-          flex-direction: column;
-          margin-right: 9.2rem;
-          .Github {
-            width: 17.8rem;
-            height: 4.8rem;
-            border-radius: 3.1rem;
-            border: 2px solid #fff;
-            color: #fff;
-            font-size: 2rem;
-            font-weight: 500;
-            background-image: linear-gradient(#0f0f2e, #090817);
-            cursor: pointer;
-          }
-          .Github:hover {
-            background-image: linear-gradient(#1f1f58, #171436);
-          }
+      }
 
-          .start {
-            width: 17.8rem;
-            height: 4.8rem;
-            background-color: #0c36f0;
-            border-radius: 3.1rem;
-            border: none;
-            font-size: 2rem;
-            font-weight: 500;
-            color: #fff;
-            margin-top: 2.3rem;
-            cursor: pointer;
-          }
-          .start:hover {
-            background-color: #3455e9;
-          }
+      .buttonAren {
+        display: flex;
+        flex-direction: column;
+        .Github {
+          width: 17.8rem;
+          height: 4.8rem;
+          border-radius: 3.1rem;
+          border: 2px solid #fff;
+          color: #fff;
+          font-size: 2rem;
+          font-weight: 500;
+          background-image: linear-gradient(#0f0f2e, #090817);
+          cursor: pointer;
+        }
+        .Github:hover {
+          background-image: linear-gradient(#1f1f58, #171436);
+        }
+
+        .start {
+          width: 17.8rem;
+          height: 4.8rem;
+          background-color: #0c36f0;
+          border-radius: 3.1rem;
+          border: none;
+          font-size: 2rem;
+          font-weight: 500;
+          color: #fff;
+          margin-top: 2.3rem;
+          cursor: pointer;
+        }
+        .start:hover {
+          background-color: #3455e9;
         }
       }
     }
