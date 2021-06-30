@@ -1,18 +1,6 @@
 <template>
   <div id="developerDocumentation">
-    <div class="head">
-      <div class="headLeft" @click="goHome">
-        <img src="@/assets/logo.png" alt="" />
-        <span>Open-IM</span>
-      </div>
-      <div class="headRight">
-        <span @click="goProductFunction">产品功能</span>
-        <div class="vertical-line"></div>
-        <span class="actived">开发者文档</span>
-        <div class="vertical-line"></div>
-        <span @click="goDownload">下载</span>
-      </div>
-    </div>
+    <Head :pageNum="page" />
     <div class="main">
       <el-container style="width: 100%; min-height: 800px">
         <el-aside width="300px">
@@ -67,11 +55,16 @@
 </template>
 
 <script>
+import Head from "@/components/Head.vue";
 export default {
   data() {
     return {
       iframeSrc: "htmlFile/introduction.html",
+      page: 0,
     };
+  },
+  components: {
+    Head,
   },
   methods: {
     goHome() {
@@ -96,13 +89,16 @@ export default {
       this.iframeSrc = "htmlFile/serverArchitecture.html";
     },
   },
+  created() {
+    this.page = 2;
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 #developerDocumentation {
   height: 100%;
-  overflow: hidden !important;
+  // overflow: hidden !important;
   .el-menu {
     min-height: 800px;
   }
@@ -120,45 +116,7 @@ export default {
   .el-main {
     overflow: hidden;
   }
-  .head {
-    height: 10rem;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    .headLeft {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      span {
-        margin-left: 3rem;
-        font-size: 4rem;
-        font-weight: 400;
-        color: #ffffff;
-      }
-    }
-    .headRight {
-      display: flex;
-      align-items: center;
-      * {
-        margin-right: 4.6rem;
-      }
-      span {
-        font-size: 2.8rem;
-        font-weight: 400;
-        color: #ffffff;
-        cursor: pointer;
-      }
-      .vertical-line {
-        width: 0.5rem;
-        height: 2.4rem;
-        background: #ffffff;
-      }
-      .actived {
-        color: #2fb3ff;
-      }
-    }
-  }
+
   .main {
     height: 100% !important;
     .iframeStyle {

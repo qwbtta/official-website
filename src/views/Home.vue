@@ -1,18 +1,6 @@
 <template>
   <div id="Home">
-    <div class="head">
-      <div class="headLeft">
-        <img src="@/assets/logo.png" alt="" />
-        <span>Open-IM</span>
-      </div>
-      <div class="headRight">
-        <span @click="goProductFunction">产品功能</span>
-        <div class="vertical-line"></div>
-        <span @click="goFile">开发者文档</span>
-        <div class="vertical-line"></div>
-        <span @click="goDownload">下载</span>
-      </div>
-    </div>
+    <Head :pageNum="page" />
     <div class="main">
       <div class="Describe">
         <div class="Describeleft">
@@ -80,11 +68,12 @@
 </template>
 
 <script>
+import Head from "@/components/Head.vue";
 export default {
   name: "Home",
-  components: {},
+  components: { Head },
   data() {
-    return {};
+    return { page: 0 };
   },
   methods: {
     goProductFunction() {
@@ -97,6 +86,9 @@ export default {
       this.$router.push("download");
     },
   },
+  created() {
+    this.page = 0;
+  },
 };
 </script>
 
@@ -106,45 +98,7 @@ body,
 #Home {
   height: 100%;
   // min-width: 1900px;
-  .head {
-    // width: 1920px;
-    height: 10rem;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    .headLeft {
-      display: flex;
-      align-items: center;
-      // margin-left: 36rem;
-      cursor: pointer;
-      span {
-        margin-left: 3rem;
-        font-size: 4rem;
-        font-weight: 400;
-        color: #ffffff;
-      }
-    }
-    .headRight {
-      display: flex;
-      align-items: center;
-      // margin-right: 31.4rem;
-      * {
-        margin-right: 4.6rem;
-      }
-      span {
-        font-size: 2.8rem;
-        font-weight: 400;
-        color: #ffffff;
-        cursor: pointer;
-      }
-      .vertical-line {
-        width: 0.5rem;
-        height: 2.4rem;
-        background: #ffffff;
-      }
-    }
-  }
+
   .main {
     background: linear-gradient(to bottom, #0f0f2e, #090817);
     padding-bottom: 25rem;

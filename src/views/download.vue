@@ -1,18 +1,6 @@
 <template>
   <div id="productFunction">
-    <div class="head">
-      <div class="headLeft" @click="goHome">
-        <img src="@/assets/logo.png" alt="" />
-        <span>Open-IM</span>
-      </div>
-      <div class="headRight">
-        <span @click="goProductFunction">产品功能</span>
-        <div class="vertical-line"></div>
-        <span @click="goFile">开发者文档</span>
-        <div class="vertical-line"></div>
-        <span class="actived">下载</span>
-      </div>
-    </div>
+    <Head :pageNum="page" />
     <div class="main">
       <span class="title">体验Open-IM</span>
       <div class="codeArea">
@@ -20,22 +8,31 @@
           <div class="itemMain">
             <img src="@/assets/uni-app.png" alt="" class="platform-logo" />
             <span class="platform-description">uni-app Andorid</span>
-            <span class="info">请使用微信扫码下载：</span>
+            <span class="info">请扫码下载：</span>
             <img src="@/assets/uniCode.png" alt="" class="code" />
           </div>
           <span class="link"
-            >开发者链接：https://cloud.tencent.com/document/sdk</span
+            >开发者链接：<a
+              href="https://github.com/OpenIMSDK/Open-IM-SDK-Uniapp"
+              target="_blank"
+            >
+              https://github.com/OpenIMSDK/Open-IM-SDK-Uniapp
+            </a></span
           >
         </div>
         <div class="item">
           <div class="itemMain">
             <img src="@/assets/Flutter.png" alt="" class="platform-logo" />
             <span class="platform-description">Flutter Andorid</span>
-            <span class="info">请使用微信扫码下载：</span>
-            <div class="code"></div>
+            <span class="info">请扫码下载：</span>
+            <img src="@/assets/flutterCode.png" alt="" class="code" />
           </div>
           <span class="link"
-            >开发者链接：https://cloud.tencent.com/document/sdk</span
+            >开发者链接：<a
+              href="https://github.com/OpenIMSDK/Open-IM-SDK-Flutter"
+              target="_blank"
+              >https://github.com/OpenIMSDK/Open-IM-SDK-Flutter</a
+            ></span
           >
         </div>
       </div>
@@ -44,9 +41,15 @@
 </template>
 
 <script>
+import Head from "@/components/Head.vue";
 export default {
   data() {
-    return {};
+    return {
+      page: 0,
+    };
+  },
+  components: {
+    Head,
   },
   methods: {
     goHome() {
@@ -59,6 +62,9 @@ export default {
       this.$router.push("developerDocumentation");
     },
   },
+  created() {
+    this.page = 3;
+  },
 };
 </script>
 
@@ -67,45 +73,14 @@ html,
 body,
 #productFunction {
   height: 100%;
-  .head {
-    height: 10rem;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    .headLeft {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      span {
-        margin-left: 3rem;
-        font-size: 4rem;
-        font-weight: 400;
-        color: #ffffff;
-      }
-    }
-    .headRight {
-      display: flex;
-      align-items: center;
-      * {
-        margin-right: 4.6rem;
-      }
-      span {
-        font-size: 2.8rem;
-        font-weight: 400;
-        color: #ffffff;
-        cursor: pointer;
-      }
-      .vertical-line {
-        width: 0.5rem;
-        height: 2.4rem;
-        background: #ffffff;
-      }
-      .actived {
-        color: #2fb3ff;
-      }
-    }
+  a {
+    color: #0288cc;
+    text-decoration: none;
   }
+  a:hover {
+    text-decoration: underline;
+  }
+
   .main {
     height: 100% !important;
     background-image: url("~@/assets/secondBackGround.png");
