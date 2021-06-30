@@ -10,7 +10,7 @@
         <div class="vertical-line"></div>
         <span class="actived">开发者文档</span>
         <div class="vertical-line"></div>
-        <span>下载</span>
+        <span @click="goDownload">下载</span>
       </div>
     </div>
     <div class="main">
@@ -79,6 +79,9 @@ export default {
     },
     goProductFunction() {
       this.$router.push("/productFunction");
+    },
+    goDownload() {
+      this.$router.push("download");
     },
     show1() {
       this.iframeSrc = "htmlFile/introduction.html";

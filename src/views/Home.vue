@@ -10,7 +10,7 @@
         <div class="vertical-line"></div>
         <span @click="goFile">开发者文档</span>
         <div class="vertical-line"></div>
-        <span>下载</span>
+        <span @click="goDownload">下载</span>
       </div>
     </div>
     <div class="main">
@@ -92,6 +92,9 @@ export default {
     },
     goFile() {
       this.$router.push("developerDocumentation");
+    },
+    goDownload() {
+      this.$router.push("download");
     },
   },
 };

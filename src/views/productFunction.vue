@@ -10,7 +10,7 @@
         <div class="vertical-line"></div>
         <span @click="goFile">开发者文档</span>
         <div class="vertical-line"></div>
-        <span>下载</span>
+        <span @click="goDownload">下载</span>
       </div>
     </div>
     <div class="main">
@@ -87,23 +87,21 @@
             <div class="management-body">
               <div class="info">
                 <div class="circle"></div>
+                <span>消息、用户统计报表，运营数据透视；</span>
+              </div>
+              <div class="info">
+                <div class="circle"></div>
+                <span>开发调试工具，快速检测系统，节省开发时间； </span>
+              </div>
+              <div class="info">
+                <div class="circle"></div>
+                <span>历史记录查询，运营利器，满足各种用途； </span>
+              </div>
+              <div class="info">
+                <div class="circle"></div>
                 <span
-                  >代码全部开源，可以随意修改，几行代码集成到各种应用中；</span
+                  >封号、告警、系统消息推送等运营服务，维护系统健康运营；</span
                 >
-              </div>
-              <div class="info">
-                <div class="circle"></div>
-                <span>目前Andorid、iOS集成ui库，其他终端正在开发中； </span>
-              </div>
-              <div class="info">
-                <div class="circle"></div>
-                <span
-                  >提供ui全托管能力，重点是会话、好友关系链、个人资料；
-                </span>
-              </div>
-              <div class="info">
-                <div class="circle"></div>
-                <span>提供demo体验；</span>
               </div>
             </div>
           </div>
@@ -124,6 +122,9 @@ export default {
     },
     goFile() {
       this.$router.push("developerDocumentation");
+    },
+    goDownload() {
+      this.$router.push("download");
     },
   },
 };
